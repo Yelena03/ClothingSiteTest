@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class SheinAutoTests {
+public class AsosTest {
 
     private WebDriver driver;
     String url = "https://www.asos.com/us/";
