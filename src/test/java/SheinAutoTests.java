@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SheinAutoTests {
 
+
     private WebDriver driver;
     String url = "https://www.asos.com/us/";
     @BeforeMethod
