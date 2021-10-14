@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SheinAutoTests {
 
-
     private WebDriver driver;
     String url = "https://www.asos.com/us/";
     @BeforeMethod
@@ -47,19 +46,8 @@ public class SheinAutoTests {
 
         searchBar.sendKeys("skirt\n");
 
-        String originalWindow = driver.getWindowHandle();
-        assert driver.getWindowHandles().size() != 1;
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        for (String windowHandle : driver.getWindowHandles()) {
-            if(!originalWindow.contentEquals(windowHandle)) {
-                driver.switchTo().window(windowHandle);
-                break;
-            }
-        }
         WebElement confirmText = driver.findElement(By.xpath("//p[contains(text(),'skirt')]"));
         String confirmTextText = confirmText.getText();
-        Assert.assertEquals(confirmTextText, "Skirt");
+        Assert.assertEquals(confirmTextText, "\"Skirt\"");
     }
 }
